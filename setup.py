@@ -1,6 +1,6 @@
 # To create my machine learning model as a package
 import os
-from setuptools import find_packages, setup
+from setuptools import find_packages, setup #type: ignore
 from typing import List
 
 HYPEN_E_DOT = '-e .'
