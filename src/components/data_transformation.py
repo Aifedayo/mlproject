@@ -23,14 +23,14 @@ class DataTransformationConfig:
 
 class DataTransformation:
     def __init__(self):
-        self.data_transformation_config = DataTransformationConfig()
+        self.data_transformation_config = DataTransformationConfig() # Create an instance of the DataTransformationConfig
 
     def get_data_transformer_object(self):
         """
         This function is responsible for data transformation
         """
         try:
-            numerical_columns = ["writing_score", "reading_score"]
+            numerical_columns = ["writing_score", "reading_score"] # reading the nums in the data
             categorical_columns = [
                 "gender", "race_ethnicity", "parental_level_of_education",
                 "lunch", "test_preparation_course"
