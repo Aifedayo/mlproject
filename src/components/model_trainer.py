@@ -28,14 +28,14 @@ class ModelTrainerConfig:
 
 class ModelTrainer:
     def __init__(self):
-        self.model_trainer_config = ModelTrainerConfig()
+        self.model_trainer_config = ModelTrainerConfig() # Create an instance of the ModelTrainerConfig
 
     def initiate_model_trainer(self, train_arr, test_arr):
         try:
-            logging.info('SPlitting training and test input data')
+            logging.info('Splitting training and test input data')
             X_train, y_train, X_test, y_test=(
-                train_arr[:,:-1],
-                train_arr[:,-1],
+                train_arr[:,:-1], # Takes all the columns and rows except the last 
+                train_arr[:,-1], # Takes all the rows but only the last column  
                 test_arr[:,:-1],
                 test_arr[:,-1]
             )
@@ -87,9 +87,7 @@ class ModelTrainer:
 
             best_model_score = max(sorted(model_report.values()))
 
-            best_model_name = list(model_report.keys())[
-                list(model_report.values()).index(best_model_score)
-            ]
+            best_model_name = list(model_report.keys())[list(model_report.values()).index(best_model_score)]
 
             best_model = models[best_model_name]
 
